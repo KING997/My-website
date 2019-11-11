@@ -57,18 +57,18 @@ let RouteList = [{
       meta: { title: 'To Do List', },
       component: resolve => require(['@/views/ToDoList/Index.vue'], resolve),
     },
-    {
-      path: '/bmap',
-      props: true,
-      meta: { title: '百度地图', },
-      component: resolve => require(['@/views/BMap/Index.vue'], resolve),
-    },
-    {
-      path: '/amap',
-      props: true,
-      meta: { title: '高德地图', },
-      component: resolve => require(['@/views/AMap/Index.vue'], resolve),
-    },
+    // {
+    //   path: '/bmap',
+    //   props: true,
+    //   meta: { title: '百度地图', },
+    //   component: resolve => require(['@/views/BMap/Index.vue'], resolve),
+    // },
+    // {
+    //   path: '/amap',
+    //   props: true,
+    //   meta: { title: '高德地图', },
+    //   component: resolve => require(['@/views/AMap/Index.vue'], resolve),
+    // },
   ]
 },
 // {
