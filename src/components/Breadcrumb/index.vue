@@ -59,10 +59,13 @@ export default {
   font-size: 14px;
   line-height: 50px;
   margin-left: 8px;
-
   .no-redirect {
-    color: #97a8be;
+    color: #fff;
     cursor: text;
   }
+}
+.el-breadcrumb__inner.is-link,
+.el-breadcrumb__inner a {
+  color: #97a8be;
 }
 </style>

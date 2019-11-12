@@ -2,7 +2,7 @@
   <div class="main">
     <div class="header">
       <div class="logo">
-        <span class="big">PC端模板组件</span>
+        <span class="big">我的网站</span>
         <span class="min">
           <img width="40" style="margin-top: 5px" src="../../assets/images/404.png" alt />
         </span>
@@ -12,22 +12,16 @@
       </span>
       <breadcrumb class="breadcrumb-container" />
       <div class="right">
-        <!-- <el-button type="primary" @click="click">click</el-button> -->
-        <span class="header-btn">
-          <i class="iconyonghu_yuan_A iconfont"></i>
-          {{userInfo.name}}
-        </span>
-        <span class="header-btn">{{userInfo.orgname}}</span>
-        <span class="header-btn close-btn" @click="logout">
-          <i class="iconguanbi iconfont"></i>
-        </span>
         <el-dropdown>
-          <span class="header-btn">
-            {{userInfo.name}}
+          <div class="header-btn">
+            <div class="imgWrap">
+              <img width="40" src="../../assets/images/头像.jpg" alt />
+            </div>
+            <!-- {{userInfo.name}} -->
             <i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
+          </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item @click.native="$router.push({name:'personalcenter'})">
+            <el-dropdown-item @click.native="$router.push({name:'Personal'})">
               <i style="padding-right: 8px" class="fa fa-cog"></i>个人中心
             </el-dropdown-item>
             <el-dropdown-item @click.native="logout">
@@ -44,6 +38,7 @@
             :router="true"
             background-color="#222d32"
             text-color="#fff"
+            active-text-color="#409EFF"
             :default-active="$route.path"
             class="menu"
             unique-opened
@@ -103,33 +98,26 @@
 <script>
 import Breadcrumb from "@/components/Breadcrumb";
 import TagsView from "@/components/TagsView";
+import Cookie from "@/tools/cookie";
 export default {
-  // beforeRouteEnter(to,from,next){
-  //     next((vm)=>{
-  //       vm.axios.get('/users/islogin').then((ret)=>{
-  //             let {data,error}=ret.data;
-  //             if(data==0){
-  //                 vm.$router.push('/login')
-  //             }
-  //         }).catch(()=>{})
-  //     });
-  //   },
-  // beforeRouteEnter(to, from, next) {
-  //   if (sessionStorage.getItem("token")) {
-  //     //判断sessionStorage是否存在token
-  //     next();
-  //   } else {
-  //     if (to.path === "/login") {
-  //       next();
-  //       return;
-  //     } else {
-  //       next({
-  //         path: "/login"
-  //       });
-  //     }
-  //   }
-  // },
-  created() {},
+  beforeRouteEnter(to, from, next) {
+    if (Cookie.get("username")) {
+      //判断sessionStorage是否存在token
+      next();
+    } else {
+      if (to.path === "/login") {
+        next();
+        return;
+      } else {
+        next({
+          path: "/login"
+        });
+      }
+    }
+  },
+  created() {
+    this.userInfo.name = this.$Cookie.get("username");
+  },
   components: {
     Breadcrumb,
     TagsView
@@ -211,8 +199,7 @@ export default {
         }
       ],
       userInfo: {
-        name: "",
-        orgname: ""
+        name: ""
       }
     };
   },
@@ -225,7 +212,10 @@ export default {
         .getElementsByTagName("body")[0]
         .style.setProperty("--color-primary", "red");
     },
-    logout() {},
+    logout() {
+      Cookie.remove("username");
+      this.$router.push("/login");
+    },
     sidebarToggle(e) {
       e.preventDefault();
       if (this.isCollapse) {
@@ -249,6 +239,15 @@ export default {
   .header {
     .breadcrumb-container {
       float: left;
+    }
+    .imgWrap {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      overflow: hidden;
+      position: absolute;
+      right: 35px;
+      top: 5px;
     }
   }
 }

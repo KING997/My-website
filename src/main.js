@@ -20,6 +20,8 @@ import './assets/css/style.scss'
 import Console from "./tools/console"
 // 引入音频文件
 import audio from './assets/music.mp3'
+//cookie
+import cookie from './tools/cookie'
 
 Vue.prototype.playAudio = () => {
   let buttonAudio = document.getElementById('eventAudio');
@@ -33,6 +35,10 @@ Vue.prototype.$axios = axios
 Vue.prototype.$imgUrl = "https://fuss10.elemecdn.com"
 //全局引入打印函数
 Vue.prototype.$Console = Console
+//全局引入cookie
+Vue.prototype.$Cookie = cookie
+
+
 // axios.defaults.baseURL = '';
 axios.defaults.withCredentials = true
 Vue.use(ElementUI);

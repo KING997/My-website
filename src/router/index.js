@@ -10,11 +10,20 @@ let RouteList = [{
 {
   path: '/index',
   name: 'Home',
+  redirect: { name: 'Personal' },
   component: resolve => require(['@/views/Layout/Index.vue'], resolve),
   meta: {
     title: '首页',
   },
   children: [
+    {
+      path: '/person',
+      name: "Personal",
+      component: resolve => require(['@/views/Personal/Index.vue'], resolve),
+      meta: {
+        title: '个人中心',
+      },
+    },
     {
       path: '/gobang',
       props: true,
