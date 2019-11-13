@@ -160,10 +160,10 @@ export default {
               url: "/todolist",
               name: "To Do List"
             },
-            {
-              url: "/bmap",
-              name: "百度地图"
-            },
+            // {
+            //   url: "/bmap",
+            //   name: "百度地图"
+            // },
             {
               url: "/amap",
               name: "高德地图"
