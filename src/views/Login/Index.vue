@@ -4,23 +4,25 @@
       <div class="login-header">登 录</div>
       <el-input
         placeholder="请输入用户名"
-        suffix-icon="fa fa-user"
+        prefix-icon="el-icon-user"
         v-model="form.user"
         style="margin-bottom: 18px"
       ></el-input>
-
       <el-input
         placeholder="请输入密码"
-        suffix-icon="fa fa-keyboard-o"
+        prefix-icon="el-icon-lock"
         v-model="form.password"
         type="password"
         style="margin-bottom: 18px"
+        show-password
         @keyup.native.enter="login"
       ></el-input>
       <el-button type="primary" style="width: 100%;margin-bottom: 18px" @click.prevent="login">登录</el-button>
-      <div style="text-align:center">
-        <span style="color:rgb(45, 58, 75)">账号：</span>admin
-        <span style="color:rgb(45, 58, 75)">密码：</span>123123
+      <div class="pswBox">
+        <div>
+          账号：admin
+          <span style="margin-left:10px">密码：123123</span>
+        </div>
       </div>
     </div>
   </div>
@@ -64,7 +66,18 @@ export default {
   }
 };
 </script>
-<style>
+
+<style lang="scss" scoped>
+.login {
+  .login-form {
+    .pswBox {
+      color: #fff;
+      position: absolute;
+      bottom: -30px;
+      left: 10px;
+    }
+  }
+}
 </style>
 
 

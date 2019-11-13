@@ -1,0 +1,37 @@
+{
+  "id": "1395467",
+  "name": "站无忧",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4266192",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e720",
+      "unicode_decimal": 59168
+    },
+    {
+      "icon_id": "6246309",
+      "name": "组件",
+      "font_class": "zujian",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "6507456",
+      "name": "首页",
+      "font_class": "shouye-copy",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "10487577",
+      "name": "游戏",
+      "font_class": "youxi",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    }
+  ]
+}

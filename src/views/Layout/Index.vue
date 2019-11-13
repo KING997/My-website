@@ -2,9 +2,9 @@
   <div class="main">
     <div class="header">
       <div class="logo">
-        <span class="big">我的网站</span>
+        <span class="big">组件库</span>
         <span class="min">
-          <img width="40" style="margin-top: 5px" src="../../assets/images/404.png" alt />
+          <img width="40" style="margin-top: 5px" src="../../assets/images/头像.jpg" alt />
         </span>
       </div>
       <span class="header-btn" @click="hiddenSidebar">
@@ -17,7 +17,6 @@
             <div class="imgWrap">
               <img width="40" src="../../assets/images/头像.jpg" alt />
             </div>
-            <!-- {{userInfo.name}} -->
             <i class="el-icon-arrow-down el-icon--right"></i>
           </div>
           <el-dropdown-menu slot="dropdown">
@@ -132,28 +131,18 @@ export default {
       isCollapse: false,
       menus: [
         {
-          icon: "el-icon-s-home",
+          icon: "iconshouye-copy",
           url: "/index",
           name: "首页"
-          // child: [
-          //   {
-          //     url: "ceshi",
-          //     name: "测试"
-          //   }
-          // ]
         },
         {
-          icon: "el-icon-s-home",
+          icon: "iconzujian",
           url: "2",
           name: "组件库",
           child: [
             {
               url: "/table",
               name: "表格组件"
-            },
-            {
-              url: "/dialog",
-              name: "弹窗组件"
             },
             {
               url: "/tinymce",
@@ -182,7 +171,7 @@ export default {
           ]
         },
         {
-          icon: "el-icon-s-home",
+          icon: "iconyouxi",
           url: "3",
           name: "小游戏",
           child: [
@@ -191,11 +180,6 @@ export default {
               name: "五子棋"
             }
           ]
-        },
-        {
-          icon: "el-icon-error",
-          url: "/error",
-          name: "404"
         }
       ],
       userInfo: {

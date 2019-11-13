@@ -14,8 +14,8 @@ import axios from 'axios'
 import storage from "./tools/storage";
 //scss
 import './assets/css/style.scss'
-//store
-// import store from './store'
+//icon
+import './assets/icon/iconfont.css'
 //console
 import Console from "./tools/console"
 // 引入音频文件
