@@ -178,6 +178,10 @@ export default {
             {
               url: "/gobang",
               name: "五子棋"
+            },
+            {
+              url: "/snake",
+              name: "贪吃蛇"
             }
           ]
         }

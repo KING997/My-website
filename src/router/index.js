@@ -31,6 +31,12 @@ let RouteList = [{
       component: resolve => require(['@/views/Gobang/Index.vue'], resolve),
     },
     {
+      path: '/snake',
+      props: true,
+      meta: { title: '贪吃蛇', },
+      component: resolve => require(['@/views/Snake/Index.vue'], resolve),
+    },
+    {
       path: '/table',
       props: true,
       meta: { title: '表格组件', },
